@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Vardhan Kaasa | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @media (max-width: 768px) {
+  header img {
+    position: static;
+    display: block;
+    margin: 0 auto 20px;
+  }
+}
+    :root {
+      --primary: #0f172a;
+      --secondary: #3b82f6;
+      --tertiary: #06b6d4;
+      --accent: #8b5cf6;
+      --bg-light: #f0f4f8;
+      --text: #1e293b;
+      --card-bg: #ffffff;
+      --shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text);
+      padding: 20px;
+    }
+
+    header {
+  background-image: 
+    linear-gradient(135deg, var(--secondary), var(--accent)),
+    url('back.jpg'); /* replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay; /* blends gradient and image */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+    header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-top: 20px;
+      
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      background: linear-gradient(135deg, #0f172a, #60a5fa); /* Dark blue to light blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
+  font-size: 3.0rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px; /* Space between cards */
+      margin-bottom: 40px;
+    }
+
+    .flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 350px; /* Fixed height for consistency */
+  perspective: 1000px;
+  margin-bottom: 30px; /* ✅ Adds spacing between cards */
+}
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .flip-card-front {
+      background-color: lightblue;
+      color: var(--text);
+    }
+
+    .flip-card-back {
+      background-color: white;
+      color: black;
+      transform: rotateY(180deg);
+      font-size: 0.95rem;
+      text-align: left;
+      overflow-y: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+
+    table th {
+        background: linear-gradient(135deg, #0f172a, #60a5fa);
+      color: white;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    .about-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #0f172a, #60a5fa); /* Dark blue to light blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-align: center;
+  font-size: 3.0rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.about-content img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.about-content p {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify ;
+}
+.experience-section {
+  padding: 60px 20px;
+  background-color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.experience-header h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1e293b;
+  position: relative;
+  text-align: center;
+}
+
+.experience-header h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  
+  margin-top: 10px;
+}
+
+.download-btn {
+  border: 1px solid #1e293b;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #1e293b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.experience-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.experience-card {
+  background-color: #e0f2fe; /* Light blue background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.company {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.date {
+  color: #3b82f6;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.footer-contact {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #0f172a;
+  color: white;
+  font-size: 1rem;
+}
+
+.footer-contact p {
+  margin: 8px 0;
+}
+
+.footer-contact a {
+  color: #60a5fa;
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact i {
+  margin-right: 6px;
+  color: #3b82f6;
+}
+.contact-section {
+  background-color: var(--card-bg);
+  padding: 50px 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin: 60px auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #0f172a, #60a5fa); /* Dark blue to light blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: linear-gradient(135deg, #0f172a, #60a5fa); /* Dark blue to light blue */
+  
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+ 
+    <h1>Rohit Vardhan Kaasa</h1>
+    <p>Junior Testing and Design Engineer | M.S. Mechanical Engineering, Florida Tech</p>
+  </header>
+  <section class="about-section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="rohit.jpg" alt="Rohit Vardhan Kaasa">
+      <p>
+        I’m Rohit Vardhan Kaasa, a results-driven Mechanical Engineer with a Master’s degree in Design and Manufacturing from Florida Institute of Technology. With hands-on experience as a Research Assistant and Junior Design Engineer, I’ve contributed to innovative projects involving High Entropy MOFs, 3D printing optimization, DFA-based assembly analysis, and hybrid vehicle prototyping.
+        <br><br>
+        My technical proficiency spans tools like AutoCAD, SolidWorks, CATIA, ANSYS, and MATLAB, with applied knowledge in GD&T, Six Sigma, lean manufacturing, and rapid prototyping. I enjoy solving complex design challenges and transforming ideas into reliable, user-centric engineering solutions.
+        <br><br>
+        I am currently seeking full-time opportunities where I can leverage my design, testing, and simulation skills to deliver impactful solutions in R&D, product development, or manufacturing engineering domains. I bring to the table a strong work ethic, a collaborative mindset, and a drive to innovate sustainably and efficiently.
+      </p>
+    </div>
+  </section>
+  <section class="experience-section">
+    <div class="experience-header">
+      <h2>Experience</h2>
+      <a href="Rohit_Vardhan_Kaasa_Resume.pdf" download class="download-btn">Download My Full Resume</a>
+    </div>
+  
+    <div class="experience-grid">
+      <div class="experience-card">
+        <h3>Research Assistant – Department of Mechanical Engineering</h3>
+        <p class="company">Florida Institute Of Technology, Melbourne, FL</p>
+        <p class="date">August 2023- June 202</p>
+        <p class="desc">As a Research Assistant in the Department of Mechanical Engineering at Florida Institute of Technology, I worked on experimental studies involving High Entropy Metal Organic Frameworks (HEMOFs) to advance clean energy storage and conversion technologies. My responsibilities focused on conducting electrochemical tests, including cyclic voltammetry and impedance spectroscopy, to investigate redox behavior and optimize material performance. I synthesized and evaluated various HEMOF structures for chemical stability, analyzed data using MATLAB and Excel, and contributed to technical documentation for conferences and internal research reviews. This role involved close collaboration with professors and researchers in a dynamic lab environment, ensuring rigorous documentation, equipment maintenance, and adherence to safety protocols, all while driving innovation in sustainable energy materials.</p>
+      </div>
+  
+      <div class="experience-card">
+        <h3>Jr. Testing and Design Engineer-Project Assistant</h3>
+        <p class="company">G. Narayanamma Institute of Technology and Science, Hyderbad, India</p>
+        <p class="date">Jan 2021 – Mar 2023</p>
+        <p class="desc">Designed and developed a cost-effective retinal imaging device aimed at early detection of eye diseases in underserved and rural areas. The project emphasized ergonomic, compact, and functional prototyping using advanced CAD tools like AutoCAD, SOLIDWORKS, and CATIA to engineer precision optical and mechanical components such as lens mounts and micro-adjustment assemblies. Structural and thermal performance were validated through Finite Element Analysis (FEA) in ANSYS, while MATLAB was used for simulation-driven optimization focusing on image quality and material efficiency. Functional prototypes were fabricated using FDM 3D printing with PLA and ABS, followed by iterative validation for fit, alignment, and durability. The development process involved active collaboration with biomedical engineers, optometry advisors, and faculty, employing agile methodologies for milestone tracking and risk management. Additionally, I prepared comprehensive technical documentation and conducted optical quality assurance using synthetic ocular phantoms, ensuring the device met usability and clinical effectiveness standards.</p>
+      </div>
+    </section>  
+
+  <section>
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="flip-card"><div class="flip-card-inner">
+        
+        <div class="flip-card-front"><h3>FDM Parameter Optimization</h3><p>MATLAB, NSGA-II, PLA/ABS</p></div>
+        <div class="flip-card-back"><p>Developed a multi-objective optimization framework using NSGA-II to fine-tune FDM 3D printing parameters—layer height, print speed, infill, and temperature for improved print quality, material efficiency, and strength. Applied mathematical modeling and design for manufacturability principles to enhance outcomes in low-cost, consumer-grade printing. Emphasized data-driven decisions through simulation and process planning in additive manufacturing environments.</p></div>
+      </div></div>
+
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-card-front"><h3>Designing and Manufacturing of a Mini Air Circulator, A 3D Printed Handheld Device </h3><p>Auto Cad, Solid Works, Ansys, FDM 3D Printer with PLA material</p></div>
+        <div class="flip-card-back"><p>Designed a multifunctional handheld Mini Air Circulator using PLA and 3D printing, integrating HVAC concepts like fan blade optimization. Performed thermal and structural analysis with ANSYS, ensuring lightweight, ergonomic design. The device featured snap-fit components with utilities like a fan, keychain, bottle opener, and ruler, and met IP40 standards for durability and user-focused performance.</p></div>
+      </div></div>
+
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-card-front"><h3>Assembly Analysis and Design Improvements on a Hydraulic Jack</h3><p>SolidWorks, Ansys, PLA</p></div>
+        <div class="flip-card-back"><p>Designed a multifunctional handheld cooling device using CAD and 3D printing. Used ANSYS for thermal/stress simulations. Integrated features like a fan, keychain, opener, and ruler in one compact form using snap-fit designs.</p></div>
+      </div></div>
+
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-card-front"><h3>Destin Design Services Pvt. Ltd. – Engineering Design Startup Concept</h3><p>Boothroyd-Dewhurst, AutoCAD</p></div>
+        <div class="flip-card-back"><p>Planned and developed the business model for Destin Design Services Pvt. Ltd., focusing on mechanical design and CAD solutions. Defined the company’s vision, mission, SWOT analysis, and digital marketing strategy targeting 3D printing and engineering services, emphasizing innovation, scalability, and client-focused growth.</p></div>
+      </div></div>
+
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-card-front"><h3>Quality Engineering & Process Improvement Projects</h3><p> Microsoft Excel (Data visualization (histograms, Pareto charts), descriptive statistics, simulation), DMAIC Framework (Six Sigma-based problem solving), SPC Charts (monitoring process performance), SIPOC Analysis (Process mapping and supply chain analysis), Lean Methodologies (JIT, 5S, Kanban), Quality Metrics (CTQ analysis, yield improvement, variation control)</p></div>
+        <div class="flip-card-back"><p>Applied quality engineering tools like SIPOC, DMAIC, and SPC to optimize recycling operations and improve MRF efficiency. Used data-driven methods (Pareto charts, histograms) for performance analysis, implemented CTQ and KPIV/KPOV assessments, and gained hands-on experience with Lean practices such as 5S, JIT, and Kanban.</p></div>
+      </div></div>
+
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-card-front"><h3>Project Engineering and Management Concepts</h3><p> Work Breakdown Structure (WBS), Network Diagram, Gantt Chart, RACI Matrix (Responsibility Assignment Matrix), Logistics and Supply Chain Design, Streamlined material flow, inventory control, and vendor coordination for efficient operations, Regulatory Compliance Frameworks, Strategic & Marketing Tools</p></div>
+        <div class="flip-card-back"><p> Developed a comprehensive project plan for a sustainable textile manufacturing plant, covering site setup, equipment, and supply chain. Utilized WBS, Gantt Charts, Network Diagrams, and RACI Matrix for task management and timelines. Focused on efficient execution, environmental compliance, and strategic growth.</p></div>
+      </div></div>
+
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-card-front"><h3>Designing and development of Air-Electro Hybrid Vehicle Prototype</h3><p>Heat Transfer concept, Lightweight materials, Energy conversion, Automotive concepts</p></div>
+        <div class="flip-card-back"><p>Designed and prototyped an eco-friendly Air-Electro Hybrid Vehicle powered by compressed air and electricity. Used solar-heated air to drive a piston and generate electric power, integrating heat transfer and HVAC principles. Built with lightweight materials, the project aimed to reduce fossil fuel use and promote sustainable transport solutions.</p></div>
+      </div></div>
+
+      
+  </section>
+
+ 
+
+  <section>
+    <h2>Skills & Tools</h2>
+    <table>
+      <tr><th>Category</th><th>Tools</th></tr>
+      <tr><td>CAD & Design</td><td>AutoCAD, SolidWorks, CATIA</td></tr>
+      <tr><td>Simulation</td><td>ANSYS, MATLAB</td></tr>
+      <tr><td>3D Printing</td><td>FDM, PLA, Rapid Prototyping</td></tr>
+      <tr><td>Project Management</td><td>WBS, Gantt Charts, RACI Matrix</td></tr>
+      <tr><td>Quality Engineering</td><td>DMAIC, Six Sigma, SPC, SIPOC</td></tr>
+    </table>
+  </section>
+  <section class="contact-section" id="contact">
+    <h2>Get in Touch</h2>
+    <form action="https://formsubmit.co/rohitvardhank@gmail.com" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  
+
+  <footer class="footer-contact">
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:+13219770837">+1 (321) 977-0837</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:rohitvardhank@gmail.com">rohitvardhank@gmail.com</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/rohitvardhank" target="_blank">linkedin.com/in/rohitvardhank</a></p>
+  </footer>
+  
+  
+  
+</body>
+</html>
